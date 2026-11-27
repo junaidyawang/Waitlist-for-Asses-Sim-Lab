@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Join the waitlist | Build Your Own Assessments &amp; Simulations with AI</title>
-<meta name="description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and a free Health Check demo.">
+<meta name="description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and free assessment demos.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Join the waitlist: Build Your Own Assessments &amp; Simulations with AI">
-<meta property="og:description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and a free Health Check demo.">
+<meta property="og:description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and free assessment demos.">
 <meta property="og:image" content="https://waitlist-for-asses-sim-lab.junaidyawang.workers.dev/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -70,7 +70,7 @@
     <div class="perks">
       <div class="perk"><b>✓</b> Priority seats</div>
       <div class="perk"><b>✓</b> Founding-cohort pricing</div>
-      <div class="perk"><b>✓</b> Free Health Check demo</div>
+      <div class="perk"><b>✓</b> Free assessment demos</div>
     </div>
   </div>
 </header>
@@ -115,9 +115,9 @@
       <label class="q">Your role <span class="req">*</span></label>
       <div class="chips">
         
-          <label class="chip"><input type="radio" name="role" value="Trainer"><span>Trainer</span></label>
+          <label class="chip"><input type="radio" name="role" value="Trainer / Facilitator"><span>Trainer / Facilitator</span></label>
         
-          <label class="chip"><input type="radio" name="role" value="Facilitator"><span>Facilitator</span></label>
+          
         
           <label class="chip"><input type="radio" name="role" value="L&amp;D"><span>L&amp;D</span></label>
         
@@ -142,11 +142,12 @@
     <div class="field">
       <label class="q">Preferred format <span class="req">*</span></label>
       <div class="chips">
-        <label class="chip"><input type="radio" name="format" value="In-person"><span>In-person</span></label>
+        <label class="chip"><input type="radio" name="format" value="In-person / Physical"><span>In-person / Physical</span></label>
         <label class="chip"><input type="radio" name="format" value="Virtual"><span>Virtual</span></label>
         <label class="chip"><input type="radio" name="format" value="In-house for my team"><span>In-house for my team</span></label>
+        <label class="chip"><input type="radio" name="format" value="1-to-1 session"><span>1-to-1 session</span></label>
       </div>
-      <div class="hint" id="inpersonNote" style="display:none;margin-top:10px">In-person sessions will be held in Malaysia.</div>
+      <div class="hint" id="inpersonNote" style="display:none;margin-top:10px">In-person / physical sessions will be held in Malaysia.</div>
     </div>
 
 
@@ -170,8 +171,9 @@
   <div class="done" id="done">
     <div class="tick">✓</div>
     <h2 id="doneTitle">You're on the list!</h2>
-    <p id="doneMsg">Check your inbox for a thank-you email with the free Health Check demo. You'll be the first to hear when dates are confirmed.</p>
-    <a class="btn2" id="sampleBtn" href="#" target="_blank" rel="noopener">Try the Health Check</a>
+    <p id="doneMsg">Check your inbox for a thank-you email with links to the free demos. You'll be the first to hear when dates are confirmed.</p>
+    <p style="font-size:14px;background:#fcf0da;color:#7a5410;border-radius:12px;padding:12px 16px;max-width:480px;margin:0 auto 18px">Can't see it in a few minutes? Check your <b>Spam</b> or <b>Promotions</b> folder and mark it <b>"Not spam"</b>, so future updates reach your inbox.</p>
+    <a class="btn2" id="sampleBtn" href="#" target="_blank" rel="noopener">Try the tools</a>
     <a class="btn2 alt" id="waBtn" href="#" target="_blank" rel="noopener" style="display:none">Join the WhatsApp community</a>
   </div>
 </div>
@@ -184,7 +186,7 @@
     // Paste your Apps Script web app URL here (ends in /exec)
     WEBAPP_URL: 'https://script.google.com/macros/s/AKfycbz4iNTfnMTv6wDA1JLkxs7-IatplEqhppgJevywisVpzrmkoHqAuguzBvWGmBlnKIk-Og/exec',
     // Free sample shown after sign-up
-    SAMPLE_LINK: 'https://script.google.com/macros/s/AKfycby6S5dNKjJC3KmHU4elSBHkv1ByR40SyTeguTfXLgtybSEFSQ_9scfglemUs_xccorkxg/exec',
+    SAMPLE_LINK: '/demo/',
     // Optional WhatsApp community invite link ('' to hide the button)
     WHATSAPP_LINK: ''
   };
@@ -211,7 +213,7 @@
   function toggleFormat() {
     var f = val('format');
     document.getElementById('inpersonNote').style.display =
-      (f === 'In-person' && countrySel.value !== 'Malaysia') ? 'block' : 'none';
+      (f === 'In-person / Physical' && countrySel.value !== 'Malaysia') ? 'block' : 'none';
   }
   Array.prototype.forEach.call(form.querySelectorAll('[name="format"]'), function (r) { r.addEventListener('change', toggleFormat); });
 

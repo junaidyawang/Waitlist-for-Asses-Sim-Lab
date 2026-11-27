@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join the waitlist | Build Your Own Assessments &amp; Simulations with AI</title>
+<meta name="description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and a free Health Check demo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Join the waitlist: Build Your Own Assessments &amp; Simulations with AI">
+<meta property="og:description" content="For trainers, facilitators, L&amp;D and HR professionals. Join the founding-cohort waitlist: priority seats, founding pricing and a free Health Check demo.">
+<meta property="og:image" content="/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0b2a5b;--navy2:#113f8c;--ink:#0f2444;--muted:#606e82;--gold:#dba443;
+        --bg:#f3f5f9;--line:#dde3ec;--blue:#2f74c9;--teal:#23898a;--purple:#7b5ce0;--red:#c9474b}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 20px 88px;position:relative;overflow:hidden}
+  header:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.05);right:-120px;top:-160px}
+  .wrap{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .brand{font-size:13px;font-weight:600;color:#c9d6ee;letter-spacing:.3px}
+  .eyebrow{display:inline-block;margin-top:26px;font-size:12px;font-weight:700;letter-spacing:1.4px;color:var(--gold)}
+  h1{font-size:34px;line-height:1.15;margin:10px 0 12px;font-weight:800}
+  header p{font-size:17px;line-height:1.55;color:#d6e0f3;margin:0;max-width:600px}
+  .perks{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .perk{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:30px;font-size:13.5px;font-weight:600}
+  .perk b{color:var(--gold)}
+  .card{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(11,42,91,.10);padding:32px;margin:-60px auto 40px;max-width:720px;position:relative;z-index:2}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{margin-bottom:22px}
+  label.q{display:block;font-weight:700;font-size:15px;margin-bottom:8px}
+  label.q .req{color:var(--red)}
+  .hint{font-size:13px;color:var(--muted);margin:-4px 0 10px}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:15px;color:var(--ink);background:#fbfcfe;transition:.15s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(47,116,201,.12)}
+  textarea{min-height:96px;resize:vertical}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#606e82 50%),linear-gradient(135deg,#606e82 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip input{position:absolute;opacity:0;pointer-events:none}
+  .chip span{display:inline-block;padding:10px 16px;border:1.5px solid var(--line);border-radius:30px;font-size:14.5px;font-weight:600;cursor:pointer;background:#fbfcfe;transition:.15s;user-select:none}
+  .chip span:hover{border-color:var(--blue)}
+  .chip input:checked + span{background:var(--navy);border-color:var(--navy);color:#fff}
+  .chip input:focus-visible + span{box-shadow:0 0 0 4px rgba(47,116,201,.25)}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;background:var(--bg);padding:14px 16px;border-radius:12px}
+  .consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--navy)}
+  .hp{position:absolute;left:-9999px}
+  button{width:100%;padding:16px;border:0;border-radius:40px;background:var(--gold);color:var(--navy);font:inherit;font-size:17px;font-weight:800;cursor:pointer;margin-top:8px;transition:.15s}
+  button:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  button:disabled{opacity:.6;cursor:wait;transform:none}
+  .err{display:none;background:#fdecec;color:#9b2c30;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;margin-top:14px}
+  .done{display:none;text-align:center;padding:20px 0}
+  .tick{width:72px;height:72px;border-radius:50%;background:var(--teal);color:#fff;font-size:38px;line-height:72px;margin:0 auto 18px}
+  .done h2{font-size:28px;margin:0 0 10px}
+  .done p{color:var(--muted);font-size:16px;line-height:1.6;max-width:480px;margin:0 auto 18px}
+  .btn2{display:inline-block;padding:13px 22px;border-radius:30px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;margin:6px}
+  .btn2.alt{background:#25d366}
+  footer{text-align:center;font-size:12.5px;color:var(--muted);padding:0 20px 36px}
+  @media (max-width:600px){h1{font-size:27px}.card{padding:22px;margin-left:12px;margin-right:12px}.row{grid-template-columns:1fr;gap:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">AJ · Learning &amp; Development</div>
+    <div class="eyebrow">FOUNDING COHORT · WAITLIST OPEN</div>
+    <h1>Build Your Own Assessments &amp; Simulations with AI</h1>
+    <p>For trainers, facilitators, L&amp;D and HR professionals who want assessments and simulations that fit <em>their</em> programme, not generic off-the-shelf tools.</p>
+    <div class="perks">
+      <div class="perk"><b>✓</b> Priority seats</div>
+      <div class="perk"><b>✓</b> Founding-cohort pricing</div>
+      <div class="perk"><b>✓</b> Free Health Check demo</div>
+    </div>
+  </div>
+</header>
+
+<div class="card">
+  <form id="f" novalidate>
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="row">
+      <div class="field">
+        <label class="q" for="name">Full name <span class="req">*</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label class="q" for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label class="q" for="whatsapp">WhatsApp number</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+60 12 345 6789" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label class="q" for="org">Organisation</label>
+        <input type="text" id="org" name="org" autocomplete="organization">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label class="q" for="country">Country <span class="req">*</span></label>
+        <select id="country" name="country"><option value="Malaysia" selected>Malaysia</option><option value="Singapore">Singapore</option><option value="Indonesia">Indonesia</option><option value="Brunei">Brunei</option><option value="Philippines">Philippines</option><option value="Thailand">Thailand</option><option value="Vietnam">Vietnam</option><option value="India">India</option><option value="Australia">Australia</option><option value="United Kingdom">United Kingdom</option><option value="United Arab Emirates">United Arab Emirates</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Other">Other</option></select>
+      </div>
+      <div class="field" id="otherWrap" style="display:none">
+        <label class="q" for="countryOther">Which country?</label>
+        <input type="text" id="countryOther" name="countryOther" autocomplete="country-name">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q">Your role <span class="req">*</span></label>
+      <div class="chips">
+        
+          <label class="chip"><input type="radio" name="role" value="Trainer"><span>Trainer</span></label>
+        
+          <label class="chip"><input type="radio" name="role" value="Facilitator"><span>Facilitator</span></label>
+        
+          <label class="chip"><input type="radio" name="role" value="L&amp;D"><span>L&amp;D</span></label>
+        
+          <label class="chip"><input type="radio" name="role" value="HR"><span>HR</span></label>
+        
+          <label class="chip"><input type="radio" name="role" value="Manager / Leader"><span>Manager / Leader</span></label>
+        
+          <label class="chip"><input type="radio" name="role" value="Other"><span>Other</span></label>
+        
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q">I'm most interested in <span class="req">*</span></label>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="interest" value="AI-built assessments"><span>AI-built assessments</span></label>
+        <label class="chip"><input type="radio" name="interest" value="AI-built simulations"><span>AI-built simulations</span></label>
+        <label class="chip"><input type="radio" name="interest" value="Both"><span>Both</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q">Preferred format <span class="req">*</span></label>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="format" value="In-person"><span>In-person</span></label>
+        <label class="chip"><input type="radio" name="format" value="Virtual"><span>Virtual</span></label>
+        <label class="chip"><input type="radio" name="format" value="In-house for my team"><span>In-house for my team</span></label>
+      </div>
+      <div class="hint" id="inpersonNote" style="display:none;margin-top:10px">In-person sessions will be held in Malaysia.</div>
+    </div>
+
+
+
+
+    <div class="field">
+      <label class="q" for="build">What would you like to create for your training or team? <span style="font-weight:500;color:#606e82">(optional)</span></label>
+      <div class="hint">For example: a pre-workshop assessment, an onboarding or competency check, a leadership or sales simulation, or a performance check-in.</div>
+      <textarea id="build" name="build" maxlength="1000" placeholder="A sentence or two is plenty"></textarea>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" name="consent">
+      <span>I agree to be contacted by email or WhatsApp about this programme. My details will only be used for this purpose, and I can ask to be removed at any time.</span>
+    </label>
+
+    <button type="submit" id="btn">Join the waitlist</button>
+    <div class="err" id="err"></div>
+  </form>
+
+  <div class="done" id="done">
+    <div class="tick">✓</div>
+    <h2 id="doneTitle">You're on the list!</h2>
+    <p id="doneMsg">Check your inbox for a thank-you email with the free Health Check demo. You'll be the first to hear when dates are confirmed.</p>
+    <a class="btn2" id="sampleBtn" href="#" target="_blank" rel="noopener">Try the Health Check</a>
+    <a class="btn2 alt" id="waBtn" href="#" target="_blank" rel="noopener" style="display:none">Join the WhatsApp community</a>
+  </div>
+</div>
+
+<footer>© <span id="yr"></span> AJ · Learning &amp; Development · Your details are kept private and never shared.</footer>
+
+<script>
+  /* ===================== EDIT THESE ===================== */
+  var CONFIG = {
+    // Paste your Apps Script web app URL here (ends in /exec)
+    WEBAPP_URL: 'https://script.google.com/macros/s/AKfycbz4iNTfnMTv6wDA1JLkxs7-IatplEqhppgJevywisVpzrmkoHqAuguzBvWGmBlnKIk-Og/exec',
+    // Free sample shown after sign-up
+    SAMPLE_LINK: 'https://script.google.com/macros/s/AKfycby6S5dNKjJC3KmHU4elSBHkv1ByR40SyTeguTfXLgtybSEFSQ_9scfglemUs_xccorkxg/exec',
+    // Optional WhatsApp community invite link ('' to hide the button)
+    WHATSAPP_LINK: ''
+  };
+  /* ====================================================== */
+
+  var params = new URLSearchParams(location.search);
+  var SRC = (params.get('src') || 'direct').slice(0, 60);
+  var form = document.getElementById('f');
+  var btn = document.getElementById('btn');
+  var err = document.getElementById('err');
+  document.getElementById('sampleBtn').href = CONFIG.SAMPLE_LINK;
+  if (CONFIG.WHATSAPP_LINK) {
+    var wa = document.getElementById('waBtn');
+    wa.href = CONFIG.WHATSAPP_LINK; wa.style.display = 'inline-block';
+  }
+
+  var TZ = '';
+  try { TZ = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var countrySel = document.getElementById('country');
+  countrySel.addEventListener('change', function () {
+    document.getElementById('otherWrap').style.display = countrySel.value === 'Other' ? 'block' : 'none';
+    toggleFormat();
+  });
+  function toggleFormat() {
+    var f = val('format');
+    document.getElementById('inpersonNote').style.display =
+      (f === 'In-person' && countrySel.value !== 'Malaysia') ? 'block' : 'none';
+  }
+  Array.prototype.forEach.call(form.querySelectorAll('[name="format"]'), function (r) { r.addEventListener('change', toggleFormat); });
+
+  function val(name) {
+    var el = form.querySelector('[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+  function showErr(msg) { err.textContent = msg; err.style.display = 'block'; }
+  function reset() { btn.disabled = false; btn.textContent = 'Join the waitlist'; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    var data = {
+      website: form.website.value,
+      name: form.name.value, email: form.email.value, whatsapp: form.whatsapp.value,
+      org: form.org.value, role: val('role'), interest: val('interest'), format: val('format'),
+      timezone: TZ, build: form.build.value,
+      country: countrySel.value === 'Other' ? (form.countryOther.value.trim() || 'Other') : countrySel.value, consent: form.consent.checked, src: SRC
+    };
+    if (!data.name.trim() || !data.email.trim()) return showErr('Please add your name and email.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) return showErr("That email address doesn't look right.");
+    if (!data.role || !data.interest || !data.format) return showErr('Please choose your role, interest and preferred format.');
+    if (!data.consent) return showErr('Please tick the consent box so we can contact you.');
+    if (CONFIG.WEBAPP_URL.indexOf('/exec') === -1) return showErr('Form not connected yet: add the Apps Script URL to index.html.');
+
+    btn.disabled = true; btn.textContent = 'Saving your spot...';
+    // Sent as plain text so the browser makes a simple request Apps Script accepts
+    fetch(CONFIG.WEBAPP_URL, { method: 'POST', body: JSON.stringify(data) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res || !res.ok) { reset(); return showErr((res && res.msg) || 'Something went wrong. Please try again.'); }
+        if (res.duplicate) {
+          document.getElementById('doneTitle').textContent = "You're already on the list";
+          document.getElementById('doneMsg').textContent = 'Thanks for checking in again. Your spot is saved, and we will be in touch as soon as dates are confirmed.';
+        } else if (res.firstName) {
+          document.getElementById('doneTitle').textContent = "You're on the list, " + res.firstName + '!';
+        }
+        form.style.display = 'none';
+        document.getElementById('done').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(function () { reset(); showErr('Connection problem. Please try again in a moment.'); });
+  });
+</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
